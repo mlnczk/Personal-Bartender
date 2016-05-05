@@ -52,62 +52,6 @@
                                     <constraint firstItem="jfV-cc-Dmn" firstAttribute="centerY" secondItem="xZZ-IX-1SV" secondAttribute="centerY" id="N0y-ia-RAe"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-XE-pEy">
-                                <rect key="frame" x="0.0" y="243" width="600" height="178"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoH-LN-btb">
-                                        <rect key="frame" x="200" y="148" width="200" height="30"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="qZv-lo-Lug"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="PRZETESTUJ SIEBIE!">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="kwn-jv-T6n" kind="show" id="Qaw-EK-0wd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoZ-gy-0aD">
-                                        <rect key="frame" x="200" y="72" width="200" height="34"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="ZOBACZ ULUBIONE">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Kx2-Tt-LyI" kind="show" id="SVh-GP-Wdz"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABy-qr-rpp">
-                                        <rect key="frame" x="200" y="0.0" width="200" height="40"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="ZFw-7j-Poy"/>
-                                            <constraint firstAttribute="height" constant="40" id="eyu-2J-Hsq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="WYSZUKAJ COCKTAIL">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="d3A-5i-n2b" kind="show" id="658-sl-GHY"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="GoZ-gy-0aD" firstAttribute="centerY" secondItem="tJS-XE-pEy" secondAttribute="centerY" id="2Gu-Bx-tJw"/>
-                                    <constraint firstItem="GoZ-gy-0aD" firstAttribute="width" secondItem="ABy-qr-rpp" secondAttribute="width" id="8OS-dh-48R"/>
-                                    <constraint firstItem="ABy-qr-rpp" firstAttribute="top" secondItem="tJS-XE-pEy" secondAttribute="top" id="Ddm-VZ-4Cy"/>
-                                    <constraint firstAttribute="bottom" secondItem="aoH-LN-btb" secondAttribute="bottom" id="EDq-V7-MrF"/>
-                                    <constraint firstItem="aoH-LN-btb" firstAttribute="width" secondItem="ABy-qr-rpp" secondAttribute="width" id="GxM-70-71D"/>
-                                    <constraint firstItem="aoH-LN-btb" firstAttribute="centerX" secondItem="tJS-XE-pEy" secondAttribute="centerX" id="VUl-oN-wDW"/>
-                                    <constraint firstItem="GoZ-gy-0aD" firstAttribute="centerX" secondItem="tJS-XE-pEy" secondAttribute="centerX" id="eXK-um-LKK"/>
-                                    <constraint firstItem="ABy-qr-rpp" firstAttribute="centerX" secondItem="tJS-XE-pEy" secondAttribute="centerX" id="h3c-Ar-N0v"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dt5-4J-5T7">
                                 <rect key="frame" x="0.0" y="421" width="600" height="179"/>
                                 <subviews>
@@ -165,6 +109,63 @@
                                     <constraint firstItem="kGU-wi-sXo" firstAttribute="centerY" secondItem="krK-Uh-U54" secondAttribute="centerY" id="dVc-GV-Qnf"/>
                                     <constraint firstItem="kGU-wi-sXo" firstAttribute="leading" secondItem="krK-Uh-U54" secondAttribute="trailing" constant="40" id="oUD-hC-Ap1"/>
                                     <constraint firstItem="XEY-Nf-ges" firstAttribute="centerY" secondItem="krK-Uh-U54" secondAttribute="centerY" id="q3W-N3-Z4S"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-XE-pEy">
+                                <rect key="frame" x="0.0" y="242" width="600" height="178"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoH-LN-btb">
+                                        <rect key="frame" x="200" y="138" width="200" height="40"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="qZv-lo-Lug"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="PRZETESTUJ SIEBIE!">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="kwn-jv-T6n" kind="show" id="Qaw-EK-0wd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoZ-gy-0aD">
+                                        <rect key="frame" x="200" y="69" width="200" height="40"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="ZOBACZ ULUBIONE">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Kx2-Tt-LyI" kind="show" id="SVh-GP-Wdz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABy-qr-rpp">
+                                        <rect key="frame" x="200" y="0.0" width="200" height="40"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="ZFw-7j-Poy"/>
+                                            <constraint firstAttribute="height" constant="40" id="eyu-2J-Hsq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="WYSZUKAJ COCKTAIL">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="d3A-5i-n2b" kind="show" id="658-sl-GHY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="GoZ-gy-0aD" firstAttribute="centerY" secondItem="tJS-XE-pEy" secondAttribute="centerY" id="2Gu-Bx-tJw"/>
+                                    <constraint firstItem="GoZ-gy-0aD" firstAttribute="width" secondItem="ABy-qr-rpp" secondAttribute="width" id="8OS-dh-48R"/>
+                                    <constraint firstItem="ABy-qr-rpp" firstAttribute="top" secondItem="tJS-XE-pEy" secondAttribute="top" id="Ddm-VZ-4Cy"/>
+                                    <constraint firstAttribute="bottom" secondItem="aoH-LN-btb" secondAttribute="bottom" id="EDq-V7-MrF"/>
+                                    <constraint firstItem="aoH-LN-btb" firstAttribute="width" secondItem="ABy-qr-rpp" secondAttribute="width" id="GxM-70-71D"/>
+                                    <constraint firstItem="aoH-LN-btb" firstAttribute="centerX" secondItem="tJS-XE-pEy" secondAttribute="centerX" id="VUl-oN-wDW"/>
+                                    <constraint firstItem="GoZ-gy-0aD" firstAttribute="centerX" secondItem="tJS-XE-pEy" secondAttribute="centerX" id="eXK-um-LKK"/>
+                                    <constraint firstItem="ABy-qr-rpp" firstAttribute="centerX" secondItem="tJS-XE-pEy" secondAttribute="centerX" id="h3c-Ar-N0v"/>
+                                    <constraint firstItem="GoZ-gy-0aD" firstAttribute="height" secondItem="aoH-LN-btb" secondAttribute="height" id="uAE-q9-ljX"/>
                                 </constraints>
                             </view>
                         </subviews>
