@@ -23,13 +23,13 @@
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Wp-Tg-7CJ">
-                        <rect key="frame" x="312" y="0.0" width="91" height="71"/>
+                        <rect key="frame" x="320" y="0.0" width="83" height="71"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="2Wp-Tg-7CJ" secondAttribute="height" multiplier="87:68" id="jJr-eR-oTK"/>
+                            <constraint firstAttribute="width" secondItem="2Wp-Tg-7CJ" secondAttribute="height" multiplier="83:71" id="oMj-Na-4wk"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laI-AU-FkF">
-                        <rect key="frame" x="0.0" y="25" width="312" height="21"/>
+                        <rect key="frame" x="0.0" y="25" width="320" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>

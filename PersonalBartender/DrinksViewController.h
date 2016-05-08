@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DrinksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+@interface DrinksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong)NSString *selectedTitle;
 
