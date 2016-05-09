@@ -8,6 +8,7 @@
 
 #import "DrinksViewController.h"
 #import "DrinksTableViewCell.h"
+#import "DetailsViewController.h"
 
 @interface DrinksViewController () <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableViewDrinks;
@@ -24,7 +25,6 @@
     [super viewDidLoad];
     
     //REGISTERING XIB//
-    
     [self.tableViewDrinks registerNib:[UINib nibWithNibName:[[DrinksTableViewCell class] description] bundle:nil] forCellReuseIdentifier:[[DrinksTableViewCell class]description]];
     
     //VODKA//
@@ -64,10 +64,9 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-// TABLE VIEW //
+    // TABLE VIEW //
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DrinksTableViewCell *cell = [self.tableViewDrinks dequeueReusableCellWithIdentifier:[[DrinksTableViewCell class] description]];
     
@@ -91,10 +90,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //USTAWIANIE OBIEKTU DO PRZESLANIA
+    
+    //SETTING OBJECT TO TRANSFERE
     self.selectedDrink = self.displayedArray[indexPath.row];
     
-    //ROBISZ PRZEJSCIE
+    //MAKING SEGUE TO ANOTHER VC
     [self performSegueWithIdentifier:@"showDetails" sender:self];
 }
 
@@ -119,16 +119,14 @@
     return YES;
 }
 
-
-
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showDetails"]){
+        DetailsViewController *vc = [segue destinationViewController];
+        vc.selectedDrink = self.selectedDrink;
+    }
 }
-*/
+
 
 @end
