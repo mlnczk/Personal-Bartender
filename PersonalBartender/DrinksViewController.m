@@ -9,11 +9,13 @@
 #import "DrinksViewController.h"
 #import "DrinksTableViewCell.h"
 
-@interface DrinksViewController ()
+@interface DrinksViewController () <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableViewDrinks;
 @property (nonatomic, strong)NSString *selectedDrink;
 @property (nonatomic, strong)NSMutableArray *displayedArray;
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) NSMutableArray *searchingData;
 
 
 
@@ -25,7 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // STWORZENIE SEARCHBARU //
     
     //rejestrowanie XIB'a
@@ -77,16 +78,25 @@
 
 // TABLE VIEW //
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    DrinksTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[[DrinksTableViewCell class] description]];
+    DrinksTableViewCell *cell = [self.tableViewDrinks dequeueReusableCellWithIdentifier:[[DrinksTableViewCell class] description]];
     
     //TWORZENIE RZEDOW ODWOLUJESZ SIE DO XIB
-    [cell customizeWithTitle:self.displayedArray[indexPath.row]];
+    if (self.searchDisplayController.active){
+        [cell customizeWithTitle:self.searchingData[indexPath.row]];
+    }else{
+        [cell customizeWithTitle:self.displayedArray[indexPath.row]];
+    }
+
+    
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-   
-    return self.displayedArray.count;
+    if (self.searchDisplayController.active) {
+        return self.searchingData.count;
+    }else{
+        return self.displayedArray.count;
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -102,6 +112,22 @@
 
 
 
+#pragma mark - search items
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope{
+    
+    NSPredicate *drinkPredicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
+    self.searchingData = [NSMutableArray arrayWithArray:[self.displayedArray filteredArrayUsingPredicate:drinkPredicate]];
+
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    return YES;
+}
 
 
 

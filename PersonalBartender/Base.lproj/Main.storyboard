@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UbK-mu-oqx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UbK-mu-oqx">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Favourite View Controller-->
@@ -272,21 +272,49 @@
                                     <outlet property="delegate" destination="RPS-5H-Pri" id="Cwb-Ly-guN"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="aGu-OA-eoE">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RPS-5H-Pri" id="CNq-ko-8Ir"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5VL-BJ-7hG" firstAttribute="top" secondItem="81h-MX-t8p" secondAttribute="bottom" id="5Ra-n6-TXO"/>
                             <constraint firstItem="81h-MX-t8p" firstAttribute="top" secondItem="4Sd-LO-o7b" secondAttribute="bottom" id="8j1-ir-UM3"/>
                             <constraint firstItem="81h-MX-t8p" firstAttribute="leading" secondItem="Pm5-m8-LYM" secondAttribute="leading" id="9Xc-Ir-mxn"/>
+                            <constraint firstAttribute="trailing" secondItem="aGu-OA-eoE" secondAttribute="trailing" id="IFa-Wa-cn2"/>
+                            <constraint firstItem="aGu-OA-eoE" firstAttribute="top" secondItem="4Sd-LO-o7b" secondAttribute="bottom" id="Mtv-PC-FPB"/>
                             <constraint firstAttribute="trailing" secondItem="81h-MX-t8p" secondAttribute="trailing" id="QK4-09-7i1"/>
+                            <constraint firstItem="aGu-OA-eoE" firstAttribute="leading" secondItem="Pm5-m8-LYM" secondAttribute="leading" id="sNd-T8-bwa"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchDisplayController" destination="K2z-JJ-Ik8" id="49F-GL-6tY"/>
                         <outlet property="tableViewDrinks" destination="81h-MX-t8p" id="tQU-2H-fmO"/>
                         <segue destination="00a-re-B3S" kind="show" identifier="showDetails" id="aUg-JU-JEp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDJ-FH-Xgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="X5Q-MD-th9">
+                    <connections>
+                        <outlet property="delegate" destination="RPS-5H-Pri" id="TaG-IJ-J6e"/>
+                        <outlet property="searchContentsController" destination="RPS-5H-Pri" id="2v4-PI-zcQ"/>
+                        <outlet property="searchResultsDataSource" destination="RPS-5H-Pri" id="zR7-zY-319"/>
+                        <outlet property="searchResultsDelegate" destination="RPS-5H-Pri" id="sKa-iA-gWz"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="K2z-JJ-Ik8">
+                    <connections>
+                        <outlet property="delegate" destination="RPS-5H-Pri" id="jT9-Je-AxW"/>
+                        <outlet property="searchBar" destination="aGu-OA-eoE" id="vt6-bO-yLG"/>
+                        <outlet property="searchContentsController" destination="RPS-5H-Pri" id="Mb7-sJ-zH6"/>
+                        <outlet property="searchResultsDataSource" destination="RPS-5H-Pri" id="yvE-cw-zE6"/>
+                        <outlet property="searchResultsDelegate" destination="RPS-5H-Pri" id="V8N-A7-idw"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2292" y="416"/>
         </scene>
