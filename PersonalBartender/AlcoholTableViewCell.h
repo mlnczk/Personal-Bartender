@@ -10,6 +10,6 @@
 
 @interface AlcoholTableViewCell : UITableViewCell
 
--(void)customizeWithTitle:(NSString *)title;
+- (void)customizeWithTitle:(NSString *)title;
 
 @end

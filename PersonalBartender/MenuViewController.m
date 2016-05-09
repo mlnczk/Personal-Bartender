@@ -26,7 +26,7 @@
     
 }
 
--(void)translation{
+- (void)translation{
     [self.buttonFavourite setTitle:seeFavourite forState:UIControlStateNormal];
 }
 
@@ -34,12 +34,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)youtubeTapped:(id)sender {
     [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"https://www.youtube.pl"]];
 }
+
 - (IBAction)twitterTapped:(id)sender {
     [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"https://www.twitter.com"]];
 }
+
 - (IBAction)facebookTapped:(id)sender {
     [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"https://www.facebook.pl"]];
 }

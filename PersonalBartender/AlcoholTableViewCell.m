@@ -29,11 +29,12 @@
 
     // Configure the view for the selected state
 }
--(void)customizeWithTitle:(NSString *)title{
+
+- (void)customizeWithTitle:(NSString *)title{
     self.labelAlcoholName.text = title;
     self.imageViewAlcohol.image = [UIImage imageNamed:title];
     
-//    dodawanie obrazku z URL
+//    ADDING PICTURE FROM URL //
     
 //    NSURL *url = [NSURL URLWithString:Vodka];
 //    NSData *data = [NSData dataWithContentsOfURL:url];

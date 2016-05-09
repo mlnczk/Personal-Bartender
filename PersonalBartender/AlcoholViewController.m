@@ -22,12 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //rejestrowanie XIB'a
+    //REGISTERING XIB//
     [self.tableViewAlcohols registerNib:[UINib nibWithNibName:[[AlcoholTableViewCell class] description] bundle:nil] forCellReuseIdentifier:[[AlcoholTableViewCell class]description]];
-    
     self.arrayAlcohols = [[NSArray alloc]initWithObjects:@"Vodka", @"Rum", @"Whisky", @"Gin",@"Tequila", nil];
     [self.tableViewAlcohols reloadData];
-    
     
 }
 
@@ -35,26 +33,29 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     AlcoholTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[[AlcoholTableViewCell class] description]];
     //TWORZENIE RZEDOW ODWOLUJESZ SIE DO XIB
     [cell customizeWithTitle:self.arrayAlcohols[indexPath.row]];
     return cell;
 }
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.arrayAlcohols.count;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //USTAWIANIE OBIEKTU DO PRZESLANIA
     self.selectedTitle = self.arrayAlcohols[indexPath.row];
     
     //ROBISZ PRZEJSCIE
     [self performSegueWithIdentifier:@"showCocktails" sender:self];
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80;
 }
-
 
 #pragma mark - Navigation
 
@@ -63,10 +64,7 @@
     if ([segue.identifier isEqualToString:@"showCocktails"]) {
         DrinksViewController *vc = [segue destinationViewController];
         vc.selectedTitle = self.selectedTitle;
-        
     }
-
-
 }
 
 

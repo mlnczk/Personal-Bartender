@@ -27,10 +27,9 @@
 
     // Configure the view for the selected state
 }
--(void)customizeWithTitle:(NSString *)title{
+- (void)customizeWithTitle:(NSString *)title{
     self.labelDrinkName.text = title;
     self.imageViewDrink.image = [UIImage imageNamed:title];
-    
 }
 
 @end
