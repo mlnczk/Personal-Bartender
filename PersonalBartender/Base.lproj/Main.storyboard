@@ -445,7 +445,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonFavourite" destination="TUg-cA-G81" id="Dgo-Me-NID"/>
                         <outlet property="imageViewDrink" destination="Xez-Y7-qTt" id="aEv-jR-BOU"/>
+                        <outlet property="labelAddFavourite" destination="8el-9S-k4v" id="hiq-uq-ft0"/>
                         <outlet property="labelDrinkDetails" destination="pWM-YX-uhM" id="zVQ-4X-oeL"/>
                         <outlet property="labelDrinkName" destination="MtF-B2-qPA" id="RpX-Yq-iwy"/>
                     </connections>

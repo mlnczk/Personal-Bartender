@@ -15,7 +15,8 @@ static NSString *const visitUs = @"ODWIEDZ NAS NA";
 static NSString *const testYourself = @"PRZETESTUJ SIEBIE!";
 static NSString *const seeFavourite = @"ZOBACZ ULUBIONE";
 static NSString *const searchCocktail = @"WYSZUKAJ COCKTAIL";
-
+static NSString *const favouriteKey = @"favourite";
+static NSString *const segueFavourite = @"showFavourites";
 
 
 

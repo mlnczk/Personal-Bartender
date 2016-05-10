@@ -8,12 +8,16 @@
 
 #import "DetailsViewController.h"
 #import "ModelDataViewController.h"
+#import "Defines.h"
 
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelDrinkName;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewDrink;
 @property (weak, nonatomic) IBOutlet UILabel *labelDrinkDetails;
+@property (nonatomic, assign) BOOL isFavourite;
+@property (weak, nonatomic) IBOutlet UIButton *buttonFavourite;
+@property (weak, nonatomic) IBOutlet UILabel *labelAddFavourite;
 
 
 @end
@@ -26,31 +30,75 @@
     self.imageViewDrink.image = [UIImage imageNamed:self.selectedDrink.image];
     self.labelDrinkDetails.text = self.selectedDrink.details;
     
+    NSMutableArray *arrayFavourites = [self checkFavourites];
+
+    for (int i = 0; i<arrayFavourites.count; i++){
+        Drinks *drinks = [[Drinks alloc]initWithDictionary:arrayFavourites[i] error:nil];
+        if (drinks.name == self.selectedDrink.name){
+            self.buttonFavourite.hidden = YES;
+            self.labelAddFavourite.hidden = YES;
+            break;
+        }else{
+            self.buttonFavourite.hidden = NO;
+            self.labelAddFavourite.hidden = NO;
+        }
+        
+    }
+    
+    
+}
+
+-(NSMutableArray *)checkFavourites{
+    NSMutableArray *arrayFavourites = [NSMutableArray new];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    arrayFavourites = [[defaults objectForKey:favouriteKey] mutableCopy];
+    return arrayFavourites;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 - (IBAction)addToFavourite:(id)sender {
-    NSMutableArray *arrayFavourites = [NSMutableArray new];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    arrayFavourites = [[defaults objectForKey:@"favourites"] mutableCopy];
-    
+   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *arrayFavourites = [self checkFavourites];
     if (!arrayFavourites) {
         arrayFavourites = [NSMutableArray new];
     }
+    
+    for (int i = 0; i<arrayFavourites.count; i++){
+        Drinks *drinks = [[Drinks alloc]initWithDictionary:arrayFavourites[i] error:nil];
+        if (drinks.name == self.selectedDrink.name){
+            self.isFavourite = YES;
+            break;
+        }else{
+            self.isFavourite = NO;
+        }
+    }
+    
+    if (self.isFavourite == NO) {
+        
     NSMutableDictionary *dict = [NSMutableDictionary new];
     [dict setObject:self.labelDrinkName.text forKey:@"name"];
     [dict setObject:self.selectedDrink.image forKey:@"image"];
     [dict setObject:self.labelDrinkDetails.text forKey:@"details"];
     [arrayFavourites addObject:dict];
     
-    [defaults setObject:arrayFavourites forKey:@"favourites"];
+    [defaults setObject:arrayFavourites forKey:favouriteKey];
     [defaults synchronize];
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Brawo!"
+                                                                       message:@"Dodales cocktail do ulubionych!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        self.labelAddFavourite.hidden = YES;
+        self.buttonFavourite.hidden = YES;
     
-    	
+    }
 }
 
 
