@@ -26,9 +26,9 @@
     [super setSelected:selected animated:animated];
 
 }
-- (void)customizeWithTitle:(NSString *)title{
-    self.labelDrinkName.text = title;
-    self.imageViewDrink.image = [UIImage imageNamed:title];
+- (void)customizeWithTitle:(Drinks *)drinks{
+    self.labelDrinkName.text = drinks.name;
+    self.imageViewDrink.image = [UIImage imageNamed:drinks.name];
 }
 
 @end

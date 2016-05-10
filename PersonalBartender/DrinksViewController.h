@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Alcohols.h"
 
 @interface DrinksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong)NSString *selectedTitle;
+@property (nonatomic, strong)Alcohols *selectedTitle;
 
 @end

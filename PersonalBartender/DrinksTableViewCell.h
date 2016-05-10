@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Drinks.h"
 
 @interface DrinksTableViewCell : UITableViewCell
 
-- (void)customizeWithTitle:(NSString *)title;
+- (void)customizeWithTitle:(Drinks *)drinks;
 
 @end

@@ -12,9 +12,9 @@
 
 @interface DrinksViewController () <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableViewDrinks;
-@property (nonatomic, strong)NSString *selectedDrink;
-@property (nonatomic, strong)NSMutableArray *displayedArray;
-@property (nonatomic, strong) NSMutableArray *searchingData;
+@property (nonatomic, strong)Drinks *selectedDrink;
+@property (nonatomic, strong)NSMutableArray *searchingData;
+@property (nonatomic, assign) BOOL wasFiltered;
 
 
 @end
@@ -27,40 +27,6 @@
     //REGISTERING XIB//
     [self.tableViewDrinks registerNib:[UINib nibWithNibName:[[DrinksTableViewCell class] description] bundle:nil] forCellReuseIdentifier:[[DrinksTableViewCell class]description]];
     
-    //VODKA//
-    NSMutableArray *vodkaArray = [[NSMutableArray alloc]initWithObjects:@"Sex on the beach",@"Vodka Sour", @"Cosmopolitan",@"Appletini",@"Vodka Martini",@"Black Russian",@"White Russian",@"Bloody Mary",@"Blue Lagoon",@"Caipiroska",@"Caipirinha",@"Espresso Martini",@"Long Island Ice Tea",@"Moscow Mule", @"Screwdriver", nil];
-    
-    //RUM//
-    NSMutableArray *rumArray = [[NSMutableArray alloc]initWithObjects:@"Cuba Libre", @"Mojito" ,@"Daiquiri", @"Banana Daiquiri", @"Strawberry Daiquiri", @"Mojito Raspberry",@"Mojito Mango",@"Mojito Passionfruit",@"Pina Colada",@"Mai Tai",@"Egg Nogg",@"The Hemingway Daiquiri", @"El Presidente",@"Hurricane",@"Planter Punch",@"Dark and Stormy", nil];
-    
-    //GIN//
-    NSMutableArray *ginArray = [[NSMutableArray alloc]initWithObjects:@"Basil Smash",@"Tom Collins",@"Tom Collins Cucumber",@"Singapore Sling",@"Gin Martini",@"Negroni",@"Gin&Tonic",@"French 75",@"Classic Gin Fizz",@"The Clover Club",@"Martinez", nil];
-    
-    //WHISKY//
-    NSMutableArray *whiskyArray = [[NSMutableArray alloc]initWithObjects:@"Whisky Sour",@"Old Fashioned",@"Sazerac",@"Mint Julep",@"Manhattan",@"Rob Roy",@"Sea's Captain Special",@"Suburban",@"Sriracha Hot Toddy",@"Presbyterian",@"John Collins",@"Blood and Sand",@"The Revolver", nil];
-    
-    //TEQUILA//
-    NSMutableArray *tequilaArray = [[NSMutableArray alloc]initWithObjects:@"Tequila Sunrise",@"Margerita",@"Strawberry Margerita",@"Rodriguez Sour",@"The Federation",@"The Charming Foxhole",@"Tequila Slammer",@"The Mars Water",@"Mojalisco",@"El Diablo", nil];
-    
-    // SETTINGS ARRAY TO DISPLAY //
-    self.displayedArray = [NSMutableArray new];
-    if ([self.selectedTitle isEqualToString:@"Vodka"]) {
-        self.displayedArray = vodkaArray;
-    }
-    else if ([self.selectedTitle isEqualToString:@"Rum"]){
-        self.displayedArray = rumArray;
-    }
-    else if ([self.selectedTitle isEqualToString:@"Gin"]){
-        self.displayedArray = ginArray;
-    }
-    else if ([self.selectedTitle isEqualToString:@"Whisky"]){
-        self.displayedArray = whiskyArray;
-    }
-    else{
-        
-        self.displayedArray = tequilaArray;
-    }
-    [self.displayedArray sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -72,12 +38,17 @@
     
     //CREATING ROWS - RELATING TO XIB//
     if (self.searchDisplayController.active){
-        [cell customizeWithTitle:self.searchingData[indexPath.row]];
+        Alcohols *alcohol = [[Alcohols alloc] init];
+        alcohol.drinks = self.searchingData.mutableCopy;
+
+        [cell customizeWithTitle:alcohol.drinks[indexPath.row]];
+        self.wasFiltered = YES;
     }else{
-        [cell customizeWithTitle:self.displayedArray[indexPath.row]];
+        [cell customizeWithTitle:self.selectedTitle.drinks[indexPath.row]];
+        self.wasFiltered = NO;
+        
     }
 
-    
     return cell;
 }
 
@@ -85,15 +56,21 @@
     if (self.searchDisplayController.active) {
         return self.searchingData.count;
     }else{
-        return self.displayedArray.count;
+        return self.selectedTitle.drinks.count;
+        
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //SETTING OBJECT TO TRANSFERE
-    self.selectedDrink = self.displayedArray[indexPath.row];
     
+    if (self.wasFiltered && self.searchingData.count > 0) {
+        self.selectedDrink = self.searchingData[indexPath.row];
+    }else{
+        self.selectedDrink = self.selectedTitle.drinks[indexPath.row];
+    }
+
     //MAKING SEGUE TO ANOTHER VC
     [self performSegueWithIdentifier:@"showDetails" sender:self];
 }
@@ -106,8 +83,9 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope{
     
-    NSPredicate *drinkPredicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
-    self.searchingData = [NSMutableArray arrayWithArray:[self.displayedArray filteredArrayUsingPredicate:drinkPredicate]];
+    NSPredicate *drinkPredicate = [NSPredicate predicateWithFormat:@"SELF.name contains[cd] %@", searchText];
+    
+    self.searchingData = [NSMutableArray arrayWithArray:[self.selectedTitle.drinks filteredArrayUsingPredicate:drinkPredicate]];
 
 }
 

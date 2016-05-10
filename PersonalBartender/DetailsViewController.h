@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Drinks.h"
 
 @interface DetailsViewController : UIViewController
-@property (nonatomic, strong)NSString *selectedDrink;
+
+@property (nonatomic, strong)Drinks *selectedDrink;
+
 
 @end

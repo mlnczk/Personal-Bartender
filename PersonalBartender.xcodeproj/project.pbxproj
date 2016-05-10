@@ -20,12 +20,15 @@
 		861C1D0D1CD226CB006E4130 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 861C1D0C1CD226CB006E4130 /* GameViewController.m */; };
 		862632031CD3DD12009CCABE /* AlcoholTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 862632011CD3DD12009CCABE /* AlcoholTableViewCell.m */; };
 		862632041CD3DD12009CCABE /* AlcoholTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 862632021CD3DD12009CCABE /* AlcoholTableViewCell.xib */; };
-		863F04371CE1EABC00E3CDA7 /* ModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 863F04361CE1EABC00E3CDA7 /* ModelData.m */; };
 		866733F41CD4E3FE00F34C44 /* DrinksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 866733F21CD4E3FE00F34C44 /* DrinksTableViewCell.m */; };
 		866733F51CD4E3FE00F34C44 /* DrinksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 866733F31CD4E3FE00F34C44 /* DrinksTableViewCell.xib */; };
 		86CC0FB01CD3724400C5E62A /* FavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CC0FAF1CD3724400C5E62A /* FavouriteViewController.m */; };
 		86F868C71CD2512D00A856EB /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F868C51CD2512D00A856EB /* LaunchScreenViewController.m */; };
 		86F868C81CD2512D00A856EB /* LaunchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F868C61CD2512D00A856EB /* LaunchScreenViewController.xib */; };
+		CE8795B81CE1EF0E00B0FA4E /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8795B71CE1EF0E00B0FA4E /* Data.m */; };
+		CE8D14471CE23D1F000FCB7E /* Alcohols.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D14461CE23D1F000FCB7E /* Alcohols.m */; };
+		CE8D144A1CE23D30000FCB7E /* Drinks.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D14491CE23D30000FCB7E /* Drinks.m */; };
+		DCE4C947B29FF123927C9E19 /* libPods-PersonalBartender.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2457302484D2D87238EECB9 /* libPods-PersonalBartender.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		642ECB2DC649A94CA6483231 /* Pods-PersonalBartender.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalBartender.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalBartender/Pods-PersonalBartender.debug.xcconfig"; sourceTree = "<group>"; };
+		8189E03DE6D73CB65BAA4B33 /* Pods-PersonalBartender.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalBartender.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalBartender/Pods-PersonalBartender.release.xcconfig"; sourceTree = "<group>"; };
 		861C1CC81CD22216006E4130 /* PersonalBartender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalBartender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		861C1CCC1CD22216006E4130 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		861C1CCE1CD22216006E4130 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,8 +78,6 @@
 		862632011CD3DD12009CCABE /* AlcoholTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlcoholTableViewCell.m; sourceTree = "<group>"; };
 		862632021CD3DD12009CCABE /* AlcoholTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlcoholTableViewCell.xib; sourceTree = "<group>"; };
 		862632071CD3EE1E009CCABE /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
-		863F04351CE1EABC00E3CDA7 /* ModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelData.h; sourceTree = "<group>"; };
-		863F04361CE1EABC00E3CDA7 /* ModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelData.m; sourceTree = "<group>"; };
 		866733F11CD4E3FE00F34C44 /* DrinksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinksTableViewCell.h; sourceTree = "<group>"; };
 		866733F21CD4E3FE00F34C44 /* DrinksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrinksTableViewCell.m; sourceTree = "<group>"; };
 		866733F31CD4E3FE00F34C44 /* DrinksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrinksTableViewCell.xib; sourceTree = "<group>"; };
@@ -83,6 +86,13 @@
 		86F868C41CD2512D00A856EB /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
 		86F868C51CD2512D00A856EB /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
 		86F868C61CD2512D00A856EB /* LaunchScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreenViewController.xib; sourceTree = "<group>"; };
+		C2457302484D2D87238EECB9 /* libPods-PersonalBartender.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PersonalBartender.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE8795B61CE1EF0E00B0FA4E /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		CE8795B71CE1EF0E00B0FA4E /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
+		CE8D14451CE23D1F000FCB7E /* Alcohols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alcohols.h; sourceTree = "<group>"; };
+		CE8D14461CE23D1F000FCB7E /* Alcohols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alcohols.m; sourceTree = "<group>"; };
+		CE8D14481CE23D30000FCB7E /* Drinks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drinks.h; sourceTree = "<group>"; };
+		CE8D14491CE23D30000FCB7E /* Drinks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drinks.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE4C947B29FF123927C9E19 /* libPods-PersonalBartender.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25EAB7449183E860EB21879B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2457302484D2D87238EECB9 /* libPods-PersonalBartender.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		861C1CBF1CD22216006E4130 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +136,8 @@
 				861C1CE41CD22217006E4130 /* PersonalBartenderTests */,
 				861C1CEF1CD22217006E4130 /* PersonalBartenderUITests */,
 				861C1CC91CD22216006E4130 /* Products */,
+				9530BA95A5CEECBE40D673C7 /* Pods */,
+				25EAB7449183E860EB21879B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +154,7 @@
 		861C1CCA1CD22216006E4130 /* PersonalBartender */ = {
 			isa = PBXGroup;
 			children = (
+				CE8795B41CE1EEFD00B0FA4E /* Model */,
 				862632051CD3EAF2009CCABE /* Defines */,
 				86CC0FAD1CD3723100C5E62A /* Favourite */,
 				861C1D0E1CD226D3006E4130 /* Game */,
@@ -199,8 +221,6 @@
 			children = (
 				861C1D081CD226BA006E4130 /* DetailsViewController.h */,
 				861C1D091CD226BA006E4130 /* DetailsViewController.m */,
-				863F04351CE1EABC00E3CDA7 /* ModelData.h */,
-				863F04361CE1EABC00E3CDA7 /* ModelData.m */,
 			);
 			name = Details;
 			sourceTree = "<group>";
@@ -265,6 +285,52 @@
 			name = LaunchScreen;
 			sourceTree = "<group>";
 		};
+		9530BA95A5CEECBE40D673C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				642ECB2DC649A94CA6483231 /* Pods-PersonalBartender.debug.xcconfig */,
+				8189E03DE6D73CB65BAA4B33 /* Pods-PersonalBartender.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE8795B41CE1EEFD00B0FA4E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D14441CE23D07000FCB7E /* Drinks */,
+				CE8D14431CE23CF0000FCB7E /* Alcohols */,
+				CE8795B51CE1EEFD00B0FA4E /* Data */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE8795B51CE1EEFD00B0FA4E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE8795B61CE1EF0E00B0FA4E /* Data.h */,
+				CE8795B71CE1EF0E00B0FA4E /* Data.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE8D14431CE23CF0000FCB7E /* Alcohols */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D14451CE23D1F000FCB7E /* Alcohols.h */,
+				CE8D14461CE23D1F000FCB7E /* Alcohols.m */,
+			);
+			name = Alcohols;
+			sourceTree = "<group>";
+		};
+		CE8D14441CE23D07000FCB7E /* Drinks */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D14481CE23D30000FCB7E /* Drinks.h */,
+				CE8D14491CE23D30000FCB7E /* Drinks.m */,
+			);
+			name = Drinks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,9 +338,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 861C1CF51CD22217006E4130 /* Build configuration list for PBXNativeTarget "PersonalBartender" */;
 			buildPhases = (
+				A462DDD67C1E394EF9A5B714 /* Check Pods Manifest.lock */,
 				861C1CC41CD22216006E4130 /* Sources */,
 				861C1CC51CD22216006E4130 /* Frameworks */,
 				861C1CC61CD22216006E4130 /* Resources */,
+				C448A666B14BA859F66CA4BB /* Embed Pods Frameworks */,
+				D1500CDB5B7E19E766C8371E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -395,11 +464,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A462DDD67C1E394EF9A5B714 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C448A666B14BA859F66CA4BB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PersonalBartender/Pods-PersonalBartender-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1500CDB5B7E19E766C8371E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PersonalBartender/Pods-PersonalBartender-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		861C1CC41CD22216006E4130 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8795B81CE1EF0E00B0FA4E /* Data.m in Sources */,
 				86CC0FB01CD3724400C5E62A /* FavouriteViewController.m in Sources */,
 				861C1CD01CD22216006E4130 /* AppDelegate.m in Sources */,
 				86F868C71CD2512D00A856EB /* LaunchScreenViewController.m in Sources */,
@@ -409,9 +527,10 @@
 				862632031CD3DD12009CCABE /* AlcoholTableViewCell.m in Sources */,
 				861C1D0A1CD226BA006E4130 /* DetailsViewController.m in Sources */,
 				861C1D071CD22691006E4130 /* DrinksViewController.m in Sources */,
-				863F04371CE1EABC00E3CDA7 /* ModelData.m in Sources */,
+				CE8D144A1CE23D30000FCB7E /* Drinks.m in Sources */,
 				861C1D041CD2267B006E4130 /* AlcoholViewController.m in Sources */,
 				866733F41CD4E3FE00F34C44 /* DrinksTableViewCell.m in Sources */,
+				CE8D14471CE23D1F000FCB7E /* Alcohols.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +659,7 @@
 		};
 		861C1CF61CD22217006E4130 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 642ECB2DC649A94CA6483231 /* Pods-PersonalBartender.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PersonalBartender/Info.plist;
@@ -551,6 +671,7 @@
 		};
 		861C1CF71CD22217006E4130 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8189E03DE6D73CB65BAA4B33 /* Pods-PersonalBartender.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PersonalBartender/Info.plist;

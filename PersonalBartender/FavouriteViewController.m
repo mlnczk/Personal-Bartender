@@ -7,8 +7,11 @@
 //
 
 #import "FavouriteViewController.h"
+#import "DrinksTableViewCell.h"
 
 @interface FavouriteViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableViewFavourites;
+@property (nonatomic, strong)NSMutableArray *arrayFavourites;
 
 @end
 
@@ -16,13 +19,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //REGISTERING XIB//
+    [self.tableViewFavourites registerNib:[UINib nibWithNibName:[[FavouriteViewController class] description] bundle:nil] forCellReuseIdentifier:[[FavouriteViewController class]description]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
+// TABLE VIEW //
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    FavouriteViewController *cell = [self.tableViewFavourites dequeueReusableCellWithIdentifier:[[FavouriteViewController class] description]];
+    
+    Alcohols *alcohol = [[Alcohols alloc] init];
+    alcohol.drinks = self.arrayFavourites.mutableCopy;
+
+    return cell;
+}
+
+
+
+
+
+
+
+
 
 /*
 #pragma mark - Navigation

@@ -14,8 +14,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewAlcohol;
 
 
-
-
 @end
 
 @implementation AlcoholTableViewCell
@@ -30,9 +28,9 @@
     // Configure the view for the selected state
 }
 
-- (void)customizeWithTitle:(NSString *)title{
-    self.labelAlcoholName.text = title;
-    self.imageViewAlcohol.image = [UIImage imageNamed:title];
+- (void)customizeWithTitle:(Alcohols *)alcohol{
+    self.labelAlcoholName.text = alcohol.alcoholName;
+    self.imageViewAlcohol.image = [UIImage imageNamed:alcohol.alcoholName];
     
 //    ADDING PICTURE FROM URL //
     

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailsViewController.h"
+#import "Alcohols.h"
 
 @interface FavouriteViewController : UIViewController
+
+- (void)showFavourites:(Alcohols *)alcohols;
 
 @end

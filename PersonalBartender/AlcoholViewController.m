@@ -8,12 +8,13 @@
 #import "AlcoholTableViewCell.h"
 #import "AlcoholViewController.h"
 #import "DrinksViewController.h"
-
+#import "Data.h"
+#import "Alcohols.h"
 @interface AlcoholViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *tableViewAlcohols;
 @property (nonatomic, strong) NSArray *arrayAlcohols;
-@property (nonatomic, strong) NSString *selectedTitle;
+@property (nonatomic, strong) Alcohols *selectedTitle;
 
 
 @end
@@ -24,7 +25,8 @@
     [super viewDidLoad];
     //REGISTERING XIB//
     [self.tableViewAlcohols registerNib:[UINib nibWithNibName:[[AlcoholTableViewCell class] description] bundle:nil] forCellReuseIdentifier:[[AlcoholTableViewCell class]description]];
-    self.arrayAlcohols = [[NSArray alloc]initWithObjects:@"Vodka", @"Rum", @"Whisky", @"Gin",@"Tequila", nil];
+    self.arrayAlcohols = [NSArray new];
+    self.arrayAlcohols = [Data getData];
     [self.tableViewAlcohols reloadData];
     
 }
@@ -36,8 +38,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     AlcoholTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[[AlcoholTableViewCell class] description]];
     //TWORZENIE RZEDOW ODWOLUJESZ SIE DO XIB
-    [cell customizeWithTitle:self.arrayAlcohols[indexPath.row]];
+    [cell customizeWithTitle:[self alcoholsWithIndexPath:indexPath]];
     return cell;
+}
+- (Alcohols *)alcoholsWithIndexPath:(NSIndexPath *)indexPath{
+    Alcohols *alcohol = [[Alcohols alloc] initWithDictionary:self.arrayAlcohols[indexPath.row] error:nil];
+    return alcohol;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -46,7 +52,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //USTAWIANIE OBIEKTU DO PRZESLANIA
-    self.selectedTitle = self.arrayAlcohols[indexPath.row];
+    self.selectedTitle = [self alcoholsWithIndexPath:indexPath];
     
     //ROBISZ PRZEJSCIE
     [self performSegueWithIdentifier:@"showCocktails" sender:self];
@@ -62,6 +68,7 @@
     if ([segue.identifier isEqualToString:@"showCocktails"]) {
         DrinksViewController *vc = [segue destinationViewController];
         vc.selectedTitle = self.selectedTitle;
+        
     }
 }
 

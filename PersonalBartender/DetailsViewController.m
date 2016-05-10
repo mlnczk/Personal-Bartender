@@ -9,7 +9,13 @@
 #import "DetailsViewController.h"
 #import "ModelDataViewController.h"
 
+
 @interface DetailsViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *labelDrinkName;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewDrink;
+@property (weak, nonatomic) IBOutlet UILabel *labelDrinkDetails;
+@property (nonatomic, strong)NSMutableArray *arrayFavourites;
+
 
 @end
 
@@ -17,12 +23,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.labelDrinkName.text = self.selectedDrink.name;
+    self.imageViewDrink.image = [UIImage imageNamed:self.selectedDrink.image];
+    self.labelDrinkDetails.text = self.selectedDrink.details;
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+- (IBAction)addToFavourite:(id)sender {
+    
+    [self.arrayFavourites addObject:self.labelDrinkName];
+    [self.arrayFavourites addObject:self.imageViewDrink];
+    [[NSUserDefaults standardUserDefaults]setObject:self.arrayFavourites forKey:@"favourites"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    	
+}
+
+
 
 /*
 #pragma mark - Navigation

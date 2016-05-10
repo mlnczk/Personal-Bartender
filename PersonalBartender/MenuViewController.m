@@ -23,7 +23,6 @@
     self.buttonSearchCocktail.layer.cornerRadius = 8;
     self.buttonPlayGame.layer.cornerRadius = 8;
     self.buttonFavourite.layer.cornerRadius = 8;
-    
 }
 
 - (void)translation{

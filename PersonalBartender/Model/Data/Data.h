@@ -1,15 +1,15 @@
 //
-//  ModelData.h
+//  Data.h
 //  PersonalBartender
 //
-//  Created by Marcin Mielniczek on 5/10/16.
+//  Created by Rafal Kampa on 10.05.2016.
 //  Copyright © 2016 Marcin Mielniczek. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface ModelData : NSObject
+@interface Data : NSObject
 
-- (NSArray *)loadData;
++ (NSArray *)getData;
 
 @end
