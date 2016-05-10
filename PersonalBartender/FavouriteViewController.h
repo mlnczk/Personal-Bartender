@@ -10,8 +10,7 @@
 #import "DetailsViewController.h"
 #import "Alcohols.h"
 
-@interface FavouriteViewController : UIViewController
+@interface FavouriteViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-- (void)showFavourites:(Alcohols *)alcohols;
 
 @end

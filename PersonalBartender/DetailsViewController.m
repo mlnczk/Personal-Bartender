@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelDrinkName;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewDrink;
 @property (weak, nonatomic) IBOutlet UILabel *labelDrinkDetails;
-@property (nonatomic, strong)NSMutableArray *arrayFavourites;
 
 
 @end
@@ -33,11 +32,24 @@
     [super didReceiveMemoryWarning];
 }
 - (IBAction)addToFavourite:(id)sender {
+    NSMutableArray *arrayFavourites = [NSMutableArray new];
     
-    [self.arrayFavourites addObject:self.labelDrinkName];
-    [self.arrayFavourites addObject:self.imageViewDrink];
-    [[NSUserDefaults standardUserDefaults]setObject:self.arrayFavourites forKey:@"favourites"];
-    [[NSUserDefaults standardUserDefaults]synchronize];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    arrayFavourites = [[defaults objectForKey:@"favourites"] mutableCopy];
+    
+    if (!arrayFavourites) {
+        arrayFavourites = [NSMutableArray new];
+    }
+    NSMutableDictionary *dict = [NSMutableDictionary new];
+    [dict setObject:self.labelDrinkName.text forKey:@"name"];
+    [dict setObject:self.selectedDrink.image forKey:@"image"];
+    [dict setObject:self.labelDrinkDetails.text forKey:@"details"];
+    [arrayFavourites addObject:dict];
+    
+    [defaults setObject:arrayFavourites forKey:@"favourites"];
+    [defaults synchronize];
+    
     	
 }
 

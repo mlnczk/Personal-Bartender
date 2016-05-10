@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PersonalBartender/FavouriteViewController.m"
-            timestampString = "484599792.925401"
+            filePath = "PersonalBartender/DetailsViewController.m"
+            timestampString = "484602422.029323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "@implementation FavouriteViewController"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "@implementation DetailsViewController"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
