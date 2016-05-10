@@ -7,6 +7,7 @@
 //
 
 #import "DetailsViewController.h"
+#import "ModelDataViewController.h"
 
 @interface DetailsViewController ()
 
@@ -16,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 }
 
 - (void)didReceiveMemoryWarning {

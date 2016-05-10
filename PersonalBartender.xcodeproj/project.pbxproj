@@ -20,6 +20,7 @@
 		861C1D0D1CD226CB006E4130 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 861C1D0C1CD226CB006E4130 /* GameViewController.m */; };
 		862632031CD3DD12009CCABE /* AlcoholTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 862632011CD3DD12009CCABE /* AlcoholTableViewCell.m */; };
 		862632041CD3DD12009CCABE /* AlcoholTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 862632021CD3DD12009CCABE /* AlcoholTableViewCell.xib */; };
+		863F04371CE1EABC00E3CDA7 /* ModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 863F04361CE1EABC00E3CDA7 /* ModelData.m */; };
 		866733F41CD4E3FE00F34C44 /* DrinksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 866733F21CD4E3FE00F34C44 /* DrinksTableViewCell.m */; };
 		866733F51CD4E3FE00F34C44 /* DrinksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 866733F31CD4E3FE00F34C44 /* DrinksTableViewCell.xib */; };
 		86CC0FB01CD3724400C5E62A /* FavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CC0FAF1CD3724400C5E62A /* FavouriteViewController.m */; };
@@ -72,6 +73,8 @@
 		862632011CD3DD12009CCABE /* AlcoholTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlcoholTableViewCell.m; sourceTree = "<group>"; };
 		862632021CD3DD12009CCABE /* AlcoholTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlcoholTableViewCell.xib; sourceTree = "<group>"; };
 		862632071CD3EE1E009CCABE /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		863F04351CE1EABC00E3CDA7 /* ModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelData.h; sourceTree = "<group>"; };
+		863F04361CE1EABC00E3CDA7 /* ModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelData.m; sourceTree = "<group>"; };
 		866733F11CD4E3FE00F34C44 /* DrinksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinksTableViewCell.h; sourceTree = "<group>"; };
 		866733F21CD4E3FE00F34C44 /* DrinksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrinksTableViewCell.m; sourceTree = "<group>"; };
 		866733F31CD4E3FE00F34C44 /* DrinksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrinksTableViewCell.xib; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 			children = (
 				861C1D081CD226BA006E4130 /* DetailsViewController.h */,
 				861C1D091CD226BA006E4130 /* DetailsViewController.m */,
+				863F04351CE1EABC00E3CDA7 /* ModelData.h */,
+				863F04361CE1EABC00E3CDA7 /* ModelData.m */,
 			);
 			name = Details;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				862632031CD3DD12009CCABE /* AlcoholTableViewCell.m in Sources */,
 				861C1D0A1CD226BA006E4130 /* DetailsViewController.m in Sources */,
 				861C1D071CD22691006E4130 /* DrinksViewController.m in Sources */,
+				863F04371CE1EABC00E3CDA7 /* ModelData.m in Sources */,
 				861C1D041CD2267B006E4130 /* AlcoholViewController.m in Sources */,
 				866733F41CD4E3FE00F34C44 /* DrinksTableViewCell.m in Sources */,
 			);
