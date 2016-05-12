@@ -34,15 +34,15 @@
 }
 
 - (IBAction)youtubeTapped:(id)sender {
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"https://www.youtube.pl"]];
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:youtubeURL]];
 }
 
 - (IBAction)twitterTapped:(id)sender {
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"https://www.twitter.com"]];
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:twitterURL]];
 }
 
 - (IBAction)facebookTapped:(id)sender {
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"https://www.facebook.pl"]];
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:facebookURL]];
 }
 
 

@@ -26,6 +26,7 @@
     [super setSelected:selected animated:animated];
 
 }
+
 - (void)customizeWithTitle:(Drinks *)drinks{
     self.labelDrinkName.text = drinks.name;
     self.imageViewDrink.image = [UIImage imageNamed:drinks.name];

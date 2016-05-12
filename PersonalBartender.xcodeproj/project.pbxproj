@@ -154,15 +154,10 @@
 		861C1CCA1CD22216006E4130 /* PersonalBartender */ = {
 			isa = PBXGroup;
 			children = (
+				866C958B1CE537DD00F1ADF2 /* ViewControllers */,
 				CE8795B41CE1EEFD00B0FA4E /* Model */,
-				862632051CD3EAF2009CCABE /* Defines */,
-				86CC0FAD1CD3723100C5E62A /* Favourite */,
-				861C1D0E1CD226D3006E4130 /* Game */,
-				861C1D0F1CD226E1006E4130 /* Details */,
-				861C1D121CD226F0006E4130 /* Drinks */,
-				861C1D101CD226E5006E4130 /* Alcohol */,
-				861C1D111CD226EA006E4130 /* Menu */,
 				861C1CFE1CD225E1006E4130 /* layout */,
+				866C958A1CE5371200F1ADF2 /* Utilities */,
 				861C1CCB1CD22216006E4130 /* Supporting Files */,
 			);
 			path = PersonalBartender;
@@ -264,6 +259,27 @@
 				862632071CD3EE1E009CCABE /* Defines.h */,
 			);
 			name = Defines;
+			sourceTree = "<group>";
+		};
+		866C958A1CE5371200F1ADF2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				862632051CD3EAF2009CCABE /* Defines */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		866C958B1CE537DD00F1ADF2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				861C1D0E1CD226D3006E4130 /* Game */,
+				86CC0FAD1CD3723100C5E62A /* Favourite */,
+				861C1D0F1CD226E1006E4130 /* Details */,
+				861C1D121CD226F0006E4130 /* Drinks */,
+				861C1D101CD226E5006E4130 /* Alcohol */,
+				861C1D111CD226EA006E4130 /* Menu */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		86CC0FAD1CD3723100C5E62A /* Favourite */ = {

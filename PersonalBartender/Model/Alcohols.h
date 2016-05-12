@@ -12,7 +12,7 @@
 @interface Alcohols : JSONModel
 
 @property (nonatomic, strong)NSString *alcoholName;
-@property (nonatomic, strong)NSArray<Drinks>* drinks;
+@property (nonatomic, strong)NSArray<Drinks> *drinks;
 
 
 

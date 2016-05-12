@@ -11,6 +11,7 @@
 
 @end
 @interface Drinks : JSONModel
+
 @property (nonatomic, strong)NSString *details;
 @property (nonatomic, strong)NSString *image;
 @property (nonatomic, strong)NSString *name;

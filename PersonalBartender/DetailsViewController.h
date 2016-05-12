@@ -11,7 +11,7 @@
 
 @interface DetailsViewController : UIViewController
 
-@property (nonatomic, strong)Drinks *selectedDrink;
+@property (nonatomic, strong) Drinks *selectedDrink;
 
 
 @end

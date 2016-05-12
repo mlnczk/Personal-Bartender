@@ -26,10 +26,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //JSON MODELLING//
     self.labelDrinkName.text = self.selectedDrink.name;
     self.imageViewDrink.image = [UIImage imageNamed:self.selectedDrink.image];
     self.labelDrinkDetails.text = self.selectedDrink.details;
     
+    
+    // ADDING FAVOURITES //
     NSMutableArray *arrayFavourites = [self checkFavourites];
 
     for (int i = 0; i<arrayFavourites.count; i++){
@@ -48,10 +51,12 @@
     
 }
 
--(NSMutableArray *)checkFavourites{
+//USING MEMENTO - BRINGING SAVED COCKTAILS ON DEVICE AND CHECKING IF THEY EXIST //
+- (NSMutableArray *)checkFavourites{
     NSMutableArray *arrayFavourites = [NSMutableArray new];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    //** ALWAYS MAKE MUTABLE COPY IF MUTABLEARRAY COMES FROM MEMENTO BECAUSE ITS UNCHANGABLE **//
     arrayFavourites = [[defaults objectForKey:favouriteKey] mutableCopy];
     return arrayFavourites;
 }
@@ -59,6 +64,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 - (IBAction)addToFavourite:(id)sender {
    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *arrayFavourites = [self checkFavourites];
@@ -79,18 +85,18 @@
     if (self.isFavourite == NO) {
         
     NSMutableDictionary *dict = [NSMutableDictionary new];
-    [dict setObject:self.labelDrinkName.text forKey:@"name"];
-    [dict setObject:self.selectedDrink.image forKey:@"image"];
-    [dict setObject:self.labelDrinkDetails.text forKey:@"details"];
+    [dict setObject:self.labelDrinkName.text forKey:keyName];
+    [dict setObject:self.selectedDrink.image forKey:keyImage];
+    [dict setObject:self.labelDrinkDetails.text forKey:keyDetails];
     [arrayFavourites addObject:dict];
     
     [defaults setObject:arrayFavourites forKey:favouriteKey];
     [defaults synchronize];
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Brawo!"
-                                                                       message:@"Dodales cocktail do ulubionych!"
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:alertCongratulations
+                                                                       message:alertMessage
                                                                 preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:alertOk style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * action) {}];
         
         [alert addAction:defaultAction];

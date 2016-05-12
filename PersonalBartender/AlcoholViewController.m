@@ -10,6 +10,8 @@
 #import "DrinksViewController.h"
 #import "Data.h"
 #import "Alcohols.h"
+#import "Defines.h"
+
 @interface AlcoholViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *tableViewAlcohols;
@@ -23,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //REGISTERING XIB//
     [self.tableViewAlcohols registerNib:[UINib nibWithNibName:[[AlcoholTableViewCell class] description] bundle:nil] forCellReuseIdentifier:[[AlcoholTableViewCell class]description]];
     self.arrayAlcohols = [NSArray new];
@@ -41,6 +44,7 @@
     [cell customizeWithTitle:[self alcoholsWithIndexPath:indexPath]];
     return cell;
 }
+
 - (Alcohols *)alcoholsWithIndexPath:(NSIndexPath *)indexPath{
     Alcohols *alcohol = [[Alcohols alloc] initWithDictionary:self.arrayAlcohols[indexPath.row] error:nil];
     return alcohol;
@@ -55,7 +59,7 @@
     self.selectedTitle = [self alcoholsWithIndexPath:indexPath];
     
     //ROBISZ PRZEJSCIE
-    [self performSegueWithIdentifier:@"showCocktails" sender:self];
+    [self performSegueWithIdentifier:segueCocktails sender:self];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -65,7 +69,7 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showCocktails"]) {
+    if ([segue.identifier isEqualToString:segueCocktails]) {
         DrinksViewController *vc = [segue destinationViewController];
         vc.selectedTitle = self.selectedTitle;
         

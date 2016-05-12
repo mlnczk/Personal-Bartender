@@ -12,8 +12,8 @@
 
 @interface FavouriteViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableViewFavourites;
-@property (nonatomic, strong)NSMutableArray *arrayFavourites;
-@property (nonatomic, strong)Drinks *selectedDrink;
+@property (nonatomic, strong) NSMutableArray *arrayFavourites;
+@property (nonatomic, strong) Drinks *selectedDrink;
 
 @end
 
@@ -26,7 +26,6 @@
     
     //REGISTERING XIB//
     [self.tableViewFavourites registerNib:[UINib nibWithNibName:[[DrinksTableViewCell class] description] bundle:nil] forCellReuseIdentifier:[[DrinksTableViewCell class]description]];
-    
     self.tableViewFavourites.allowsMultipleSelectionDuringEditing = NO;
     
 }
@@ -57,12 +56,13 @@
     
     return self.arrayFavourites.count;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //SETTING OBJECT TO TRANSFERE
     self.selectedDrink = [self drinksWithIndexPath:indexPath];
     
-    //MAKING SEGUE TO ANOTHER VC
+    //MAKING SEGUE TO ANOTHER VIEW CONTROLLER
     [self performSegueWithIdentifier:segueFavourite sender:self];
 }
 
@@ -71,6 +71,7 @@
     return YES;
 }
 
+    //ADDING DELETE OPTION //
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
@@ -80,11 +81,6 @@
         [self.tableViewFavourites reloadData];
     }
 }
-
-
-
-
-
 
 
 

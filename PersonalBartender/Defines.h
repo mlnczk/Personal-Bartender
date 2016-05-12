@@ -17,9 +17,18 @@ static NSString *const seeFavourite = @"ZOBACZ ULUBIONE";
 static NSString *const searchCocktail = @"WYSZUKAJ COCKTAIL";
 static NSString *const favouriteKey = @"favourite";
 static NSString *const segueFavourite = @"showFavourites";
-
-
-
+static NSString *const youtubeURL = @"https://www.youtube.pl";
+static NSString *const twitterURL = @"https://www.twitter.com";
+static NSString *const facebookURL = @"https://www.facebook.pl";
+static NSString *const segueCocktails = @"showCocktails";
+static NSString *const segueDetails = @"showDetails";
+static NSString *const predicateFormat = @"SELF.name contains[cd] %@";
+static NSString *const keyName = @"name";
+static NSString *const keyImage = @"image";
+static NSString *const keyDetails = @"details";
+static NSString *const alertCongratulations = @"Brawo!";
+static NSString *const alertMessage = @"Dodales cocktail do ulubionych!";
+static NSString *const alertOk = @"OK";
 
 
 #endif

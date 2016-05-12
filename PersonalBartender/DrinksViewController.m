@@ -9,11 +9,12 @@
 #import "DrinksViewController.h"
 #import "DrinksTableViewCell.h"
 #import "DetailsViewController.h"
+#import "Defines.h"
 
 @interface DrinksViewController () <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableViewDrinks;
-@property (nonatomic, strong)Drinks *selectedDrink;
-@property (nonatomic, strong)NSMutableArray *searchingData;
+@property (nonatomic, strong) Drinks *selectedDrink;
+@property (nonatomic, strong) NSMutableArray *searchingData;
 @property (nonatomic, assign) BOOL wasFiltered;
 
 
@@ -28,6 +29,7 @@
     [self.tableViewDrinks registerNib:[UINib nibWithNibName:[[DrinksTableViewCell class] description] bundle:nil] forCellReuseIdentifier:[[DrinksTableViewCell class]description]];
     
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -40,7 +42,7 @@
     if (self.searchDisplayController.active){
         Alcohols *alcohol = [[Alcohols alloc] init];
         alcohol.drinks = self.searchingData.mutableCopy;
-
+        
         [cell customizeWithTitle:alcohol.drinks[indexPath.row]];
         self.wasFiltered = YES;
     }else{
@@ -48,7 +50,7 @@
         self.wasFiltered = NO;
         
     }
-
+    
     return cell;
 }
 
@@ -72,7 +74,7 @@
     }
 
     //MAKING SEGUE TO ANOTHER VC
-    [self performSegueWithIdentifier:@"showDetails" sender:self];
+    [self performSegueWithIdentifier:segueDetails sender:self];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -83,7 +85,7 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope{
     
-    NSPredicate *drinkPredicate = [NSPredicate predicateWithFormat:@"SELF.name contains[cd] %@", searchText];
+    NSPredicate *drinkPredicate = [NSPredicate predicateWithFormat:predicateFormat, searchText];
     
     self.searchingData = [NSMutableArray arrayWithArray:[self.selectedTitle.drinks filteredArrayUsingPredicate:drinkPredicate]];
 
@@ -100,7 +102,7 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showDetails"]){
+    if ([segue.identifier isEqualToString:segueDetails]){
         DetailsViewController *vc = [segue destinationViewController];
         vc.selectedDrink = self.selectedDrink;
     }
