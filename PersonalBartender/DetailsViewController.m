@@ -37,7 +37,7 @@
 
     for (int i = 0; i<arrayFavourites.count; i++){
         Drinks *drinks = [[Drinks alloc]initWithDictionary:arrayFavourites[i] error:nil];
-        if (drinks.name == self.selectedDrink.name){
+        if ([drinks.name containsString:self.selectedDrink.name]){
             self.buttonFavourite.hidden = YES;
             self.labelAddFavourite.hidden = YES;
             break;
