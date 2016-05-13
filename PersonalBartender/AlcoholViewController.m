@@ -58,7 +58,7 @@
     //USTAWIANIE OBIEKTU DO PRZESLANIA
     self.selectedTitle = [self alcoholsWithIndexPath:indexPath];
     
-    //ROBISZ PRZEJSCIE
+    //PERFORMING SEGUE//
     [self performSegueWithIdentifier:segueCocktails sender:self];
 }
 

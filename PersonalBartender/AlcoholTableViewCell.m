@@ -19,20 +19,19 @@
 @implementation AlcoholTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+   
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 - (void)customizeWithTitle:(Alcohols *)alcohol{
     self.labelAlcoholName.text = alcohol.alcoholName;
     self.imageViewAlcohol.image = [UIImage imageNamed:alcohol.alcoholName];
     
-//    ADDING PICTURE FROM URL //
+//  **  ADDING PICTURE FROM URL **//
     
 //    NSURL *url = [NSURL URLWithString:Vodka];
 //    NSData *data = [NSData dataWithContentsOfURL:url];

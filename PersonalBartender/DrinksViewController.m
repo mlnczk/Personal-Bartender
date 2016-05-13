@@ -65,7 +65,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //SETTING OBJECT TO TRANSFERE
+    //SETTING OBJECT TO TRANSFERE//
     
     if (self.wasFiltered && self.searchingData.count > 0) {
         self.selectedDrink = self.searchingData[indexPath.row];
@@ -73,7 +73,7 @@
         self.selectedDrink = self.selectedTitle.drinks[indexPath.row];
     }
 
-    //MAKING SEGUE TO ANOTHER VC
+    //MAKING SEGUE TO ANOTHER VIEW CONTROLLER//
     [self performSegueWithIdentifier:segueDetails sender:self];
 }
 
